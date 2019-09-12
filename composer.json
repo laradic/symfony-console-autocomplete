@@ -12,19 +12,16 @@
         "symfony/console": "2.8.*"
     },
     "authors": [
-        {
-            "name": "Bilal Amarni",
-            "email": "bilal.amarni@gmail.com",
-            "role": "Lead developer"
-        },
-        {
-            "name": "Richard Quadling",
-            "email": "RQuadling@gmail.com",
-            "role": "Contributing developer"
-        }
+        {"name": "Bilal Amarni", "email": "bilal.amarni@gmail.com", "role": "Lead developer"},
+        {"name": "Richard Quadling", "email": "RQuadling@gmail.com", "role": "Contributing developer"}
     ],
-    "bin": [ "bin/symfony-autocomplete" ],
+    "bin": ["bin/symfony-autocomplete"],
     "autoload": {
-        "psr-4": { "Bamarni\\Symfony\\Console\\Autocomplete\\": "src/" }
+        "psr-4": {"Bamarni\\Symfony\\Console\\Autocomplete\\": "src/"}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.5.x-dev"
+        }
     }
 }
