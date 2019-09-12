@@ -1,5 +1,7 @@
 # Symfony console autocomplete 
 
+> This fork includes `composer/xdebughandler`.
+
 [![Travis Status](https://travis-ci.org/bamarni/symfony-console-autocomplete.svg?branch=master)](https://travis-ci.org/bamarni/symfony-console-autocomplete)
 [![Latest Stable Version](https://poser.pugx.org/bamarni/symfony-console-autocomplete/version.png)](https://packagist.org/packages/bamarni/symfony-console-autocomplete)
 [![Total Downloads](https://poser.pugx.org/bamarni/symfony-console-autocomplete/d/total.png)](https://packagist.org/packages/bamarni/symfony-console-autocomplete)
