@@ -1,11 +1,8 @@
 #!/usr/bin/env php
 <?php
 
-$xdebug =  new XdebugHandler('symfony-autocomplete');
-$xdebug->check();
-unset($xdebug);
-
-use Composer\XdebugHandler\XdebugHandler;use Symfony\Component\Console\Application as BaseApplication;
+use Composer\XdebugHandler\XdebugHandler;
+use Symfony\Component\Console\Application as BaseApplication;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Bamarni\Symfony\Console\Autocomplete\DumpCommand;
@@ -17,6 +14,12 @@ if (file_exists($autoload = __DIR__.'/../../../autoload.php')) {
 } else {
     require_once __DIR__.'/../vendor/autoload.php';
 }
+
+$xdebug =  new XdebugHandler('symfony-autocomplete');
+$xdebug->check();
+unset($xdebug);
+
+
 
 class Application extends BaseApplication
 {
