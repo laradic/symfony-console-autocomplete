@@ -1,4 +1,7 @@
-_<?php echo $vars['script'] ?>()
+<?
+/** @noinspection ALL */
+// formatter:off
+?>_<?= $vars['script'] ?>()
 {
     local cur script coms opts com
     COMPREPLY=()
@@ -21,15 +24,15 @@ _<?php echo $vars['script'] ?>()
 
     # completing for an option
     if [[ ${cur} == --* ]] ; then
-        opts="<?php echo join(' ', $vars['options_global']) ?>"
+        opts="<?= join(' ', $vars['options_global']) ?>"
 
         case "$com" in
-<?php foreach ($vars['options_command'] as $command => $options): ?>
+<? foreach ($vars['options_command'] as $command => $options): ?>
 
-            <?php echo $command ?>)
-            opts="${opts} <?php echo join(' ', array_diff($options, $vars['options_global'])) ?>"
+            <?= $command ?>)
+            opts="${opts} <?= join(' ', array_diff($options, $vars['options_global'])) ?>"
             ;;
-<?php endforeach; ?>
+<? endforeach; ?>
 
         esac
 
@@ -41,7 +44,7 @@ _<?php echo $vars['script'] ?>()
 
     # completing for a command
     if [[ $cur == $com ]]; then
-        coms="<?php echo join(' ', $vars['commands']) ?>"
+        coms="<?= join(' ', $vars['commands']) ?>"
 
         COMPREPLY=($(compgen -W "${coms}" -- ${cur}))
         __ltrim_colon_completions "$cur"
@@ -50,7 +53,7 @@ _<?php echo $vars['script'] ?>()
     fi
 }
 
-<?php foreach ($vars['tools'] as $tool): ?>
-complete -o default -F _<?php echo $vars['script'] ?> <?php echo $tool ?>
+<? foreach ($vars['tools'] as $tool): ?>
+complete -o default -F _<?= $vars['script'] ?> <?= $tool ?>
 
-<?php endforeach; ?>
+<? endforeach; ?>
